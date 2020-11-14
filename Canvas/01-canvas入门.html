@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas</title>
+</head>
+<body>
+  <canvas id="demo" width="600" height="600"></canvas>
+
+  <script>
+    // 获取canvas的dom标签
+    let canvas = document.getElementById('demo')
+    // 获取canvas的上下文对象 context
+    let ctx = canvas.getContext('2d')
+
+    // 绘制图形
+    ctx.moveTo(100,100) //把画笔移动到100,100的点
+    ctx.lineTo(200,100) //从画笔的位置 画一条直线到200,100点
+    ctx.lineTo(100,200) //从当前位置，在画一条直线到200,200的点
+    // ctx.lineTo(100,100)
+    ctx.closePath()//闭合路径
+
+    // 添加描边的样式
+    ctx.strokeStyle = 'red' //rgb rgba red
+    ctx.lineWidth = 4 //线宽
+    ctx.stroke()  //stoke: 描边的意思
+
+
+    // 填充的样式
+    ctx.fillStyle = 'blue'
+    // 填充
+    ctx.fill()
+  </script>
+</body>
+</html>
