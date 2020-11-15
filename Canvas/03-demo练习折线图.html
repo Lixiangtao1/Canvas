@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="demo" width="600" height="600"></canvas>
+
+  <script>
+    let canvas = document.getElementById('demo')
+    let ctx = canvas.getContext('2d')
+
+    ctx.beginPath() //默认初始化的状态，可以省略
+    
+    canvas.style.border = '1px solid #999'
+    // 1.定义一个原定坐标，绘制纵坐标
+    ctx.moveTo(100, 400)
+    ctx.lineTo(100, 100)
+    ctx.strokeStyle = 'red'
+    // ctx.stroke()
+    // 2.绘制纵坐标的箭头
+    ctx.moveTo(100, 100)
+    ctx.lineTo(90, 110)
+    ctx.moveTo(100, 100)
+    ctx.lineTo(110, 110)
+    // ctx.stroke()
+    //3. 绘制横坐标
+    ctx.moveTo(100,400)
+    ctx.lineTo(500,400)
+    // ctx.stroke()
+    // 4.绘制横坐标的箭头
+    ctx.moveTo(500,400)
+    ctx.lineTo(490,390)
+    ctx.moveTo(500,400)
+    ctx.lineTo(490,410)
+    ctx.stroke()
+
+
+    ctx.beginPath()  //开启一个新的状态-----------------*********（新状态可以继承之前的状态, 但是当前状态设置的所有样式只能作用于当前状态）
+    ctx.strokeStyle = 'skyblue'
+    // 5.绘制折线
+    ctx.moveTo(100,400)
+    ctx.lineTo(200,250)
+    ctx.lineTo(300,200)
+    ctx.lineTo(400,300)
+    ctx.lineTo(500,100)
+    ctx.stroke()
+
+    
+    
+  </script>
+</body>
+</html>

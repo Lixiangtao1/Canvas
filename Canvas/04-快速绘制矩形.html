@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="demo" width="600" height="600"></canvas>
+
+  <script>
+    let canvas = document.getElementById('demo')
+    let ctx = canvas.getContext('2d')
+
+    ctx.beginPath() //默认初始化的状态，可以省略
+    
+    canvas.style.border = '1px solid #999'
+    // 前两个参数为矩形的x,y坐标,后两个参数为宽高
+    // ctx.rect(x,y,width,height)
+
+    ctx.rect(100,100,300,200)
+    ctx.stroke()
+
+    ctx.strokeRect(200,400,50,50)//描边矩形
+
+    ctx.fillRect(300,300,50,100)//填充矩形（fill会自动闭合路径）
+
+    ctx.clearRect(0,0,600,600) //清除矩形（清除其内部所有内容）
+    
+  </script>
+</body>
+</html>

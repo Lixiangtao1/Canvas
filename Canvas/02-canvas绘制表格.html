@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="demo" width="600" height="600" ></canvas>
+
+  <script>
+    let canvas = document.getElementById('demo')
+    canvas.style.border = '1px solid #333'
+    let ctx = canvas.getContext('2d')
+
+    let rectH = 10, rectW = 10;
+    ctx.lineWidth = 0.5
+    // 1.绘制横线
+    for(let i = 0; i < canvas.width/rectH; i++){
+      ctx.moveTo(0,i * rectH)//从原点开始
+      ctx.lineTo(canvas.width, i * rectH)//X轴坐标为canvas的宽度（也就是表格的宽度） Y轴坐标为循环的值*rectH
+
+      // 2.绘制竖线
+      ctx.moveTo(i * rectW, 0)
+      ctx.lineTo(i * rectW, canvas.height)
+      
+    }
+    ctx.stroke()
+
+
+  </script>
+</body>
+</html>
